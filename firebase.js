@@ -1,17 +1,20 @@
-// firebase.js
+// Importa los módulos necesarios de Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getDatabase, ref, set, get, update } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-
+// Configura Firebase con las credenciales de tu proyecto
 const firebaseConfig = {
-  apiKey: "AIzaSyDdbzDqzZ8Jj66HxRkAimb45q_9L_X7cXE",
-  authDomain: "planta-en-marte.firebaseapp.com",
-  databaseURL: "https://planta-en-marte-default-rtdb.firebaseio.com",
-  projectId: "planta-en-marte",
-  storageBucket: "planta-en-marte.firebasestorage.app",
-  messagingSenderId: "971753485789",
-  appId: "1:971753485789:web:aed27e003d3e2d9685f234"
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
 };
 
-// Initialize Firebase
+// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
+
+// Obtén una instancia de la base de datos en tiempo real
+const database = getDatabase(app);
